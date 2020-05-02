@@ -7,6 +7,8 @@ let map_width = MAX_WIDTH/2 - 10, map_height = 500;
 
 const GRAPH_COLOR = [7, 31, 184]
 
+let filename = "./data/twitter/clean_tweets.csv"
+
 // ---------------------------Map Setup---------------------------------
 // Static elements only
 let mapsvg = d3.select("#map")      // svg object for the map
@@ -15,18 +17,6 @@ let mapsvg = d3.select("#map")      // svg object for the map
     .attr("height", map_height)
     .append("g")
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
-
-var defs = mapsvg.append("defs");
-
-mapsvg.append("text")
-    .attr("y", map_height-margin.top-margin.bottom - 50)
-    .attr("x", (map_width-margin.left-margin.right) * 0.35 - 150)
-    .text("Low Win %");
-
-mapsvg.append("text")
-    .attr("y", map_height-margin.top-margin.bottom - 50)
-    .attr("x", (map_width-margin.left-margin.right) * 0.65 + 50) 
-    .text("High Win %");
 
 let maptitle = mapsvg.append("text")
     .attr("transform", `translate(${(map_width - margin.left - margin.right) / 2}, ${10})`)
@@ -40,12 +30,12 @@ var tooltip = d3.select("#map").append("div")
 
 var worldmap = d3.json("./data/countries.geojson")
 var projection = d3.geoEquirectangular()
-projection.translate([map_width/2 - margin.left, map_height/2 - margin.top - 50]).scale(200).center([0,0]);
+projection.translate([map_width/2 - margin.left, map_height/2 - margin.top]).scale(120).center([0,0]);
 // projection.fitSize([graph_3_width, graph_3_height], worldmap)
 var path = d3.geoPath().projection(projection);
 
 d3.csv(filename).then(function(data){
-    records = []];
+    records = [];
     const bestRecord = Math.max(... records.map((d) => d.record));
 
     worldmap.then(function(values){    
@@ -124,4 +114,26 @@ function makeToolTipContent(country, records){
 
 
     return container.innerHTML
+}
+
+function countryCleaner(country){
+    // if the country names don't line up right, remap them
+    let dict = {
+    "unitedstatesofamerica":"unitedstates",
+    "china":"chinapr",
+    "taiwan":"chinesetaipei",
+    "unitedrepublicoftanzania":"tanzania",
+    "democraticrepublicofthecongo":"drcongo",
+    "republicofcongo":"congo",
+    "republicofserbia":"serbia",
+    "macedonia":"northmacedonia",
+    "swaziland":"eswatini",
+    "guineabissau":"guinea-bissau",
+    "ireland":"republicofireland"
+    };
+    if (country in dict) {
+        return dict[country]
+    } else {
+        return country
+    }
 }
