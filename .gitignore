@@ -1,0 +1,5 @@
+#don't track the tweets
+./*/*/*/*.CSV
+
+#don't track the venv
+venv/
