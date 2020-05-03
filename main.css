@@ -6,3 +6,96 @@
 .header{
     padding-left: 50px;
 }
+
+#head-img{
+    height: 40px;
+    padding-bottom: 5px;
+    margin-left: 20px;
+}
+
+path:hover {
+    stroke: black;
+    stroke-width: 1px;
+  }
+
+/* map tooltip formatting */
+div.tooltip { 
+    position: absolute;     
+    text-align: center;     
+    width: 340px;                 
+    padding: 10px;
+    font: 12px sans-serif;    
+    background: #bbb; 
+    border: 0px;        
+    pointer-events: none;
+}
+
+.map-tt-fields{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.map-tt-head{
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+.map-tt-row{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    display: inline-block;
+}
+
+.map-tt-left-col{
+    display: inline-block;
+    width: 45%;
+    text-align: left;
+}
+
+.map-tt-right-col{
+    display: inline-block;
+    width: 45%;
+    text-align: right;
+}
+
+.map-tt-im-box{
+    width:10%;
+    display:inline-block;
+    clear: right
+}
+
+.map-tt-im{
+    height: 0.9em;
+}
+
+/* Text Colors */
+
+.orange-text{
+    color: rgb(255,150,50);
+}
+
+.blue-text{
+    color: rgb(21,81,184);
+}
+
+/* Slider Formatting */
+
+.full-width-slider-box{
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.full-width-slider{
+    width: 100%;
+}
+
+#slider-margin{
+    margin: 0px;
+    border: 0px;
+    padding-left: 40px;
+    padding-right: 40px;
+}

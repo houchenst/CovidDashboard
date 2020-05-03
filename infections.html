@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <title>COVID-19 Dashboard</title>
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="main.css"/>
+        <script src="jquery-3.5.0.min.js"></script>
+        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+        <script type="text/javascript" src="https://d3js.org/topojson.v0.min.js"></script>
+    </head>
+<body>
+    <div class="header">
+        <h2>COVID-19 Dashboard<img id="head-img"src="./images/BlueUptick.png" alt=""></h2>
+    </div>
+    <nav class="navbar navbar-light navbar-expand-sm bg-light">
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a href="#" class="nav-link">Map View</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Page 1</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Page 2</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Page 3</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary">Retail & Recreation</button>
+        <button type="button" class="btn btn-secondary">Grocery & Pharmacy</button>
+        <button type="button" class="btn btn-secondary">Parks</button>
+        <button type="button" class="btn btn-secondary">Transit Station</button>
+        <button type="button" class="btn btn-secondary">Workplaces</button>
+        <button type="button" class="btn btn-secondary">Residential</button>
+    </div>
+    <div class="row">
+        <div id="map" class="col-lg-6"></div>
+    </div>
+    <div class="full-width-slider-box" id="map-slider-box">
+        <div id="slider-margin">
+            <input type="range" class="full-width-slider" min="0" max="5" step="1" id="mapDate" value="0">
+        </div>
+    </div>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
