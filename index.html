@@ -4,9 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <title>COVID-19 Dashboard</title>
-        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="main.css"/>
-        <script src="jquery-3.5.0.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css"/>
+        <script type="text/javascript" src="js/jquery-3.5.0.min.js"></script>
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
         <script type="text/javascript" src="https://d3js.org/topojson.v0.min.js"></script>
     </head>
@@ -24,14 +26,37 @@
             </ul>
         </div>
     </nav>
-    <!-- <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary">Retail & Recreation</button>
-        <button type="button" class="btn btn-secondary">Grocery & Pharmacy</button>
-        <button type="button" class="btn btn-secondary">Parks</button>
-        <button type="button" class="btn btn-secondary">Transit Station</button>
-        <button type="button" class="btn btn-secondary">Workplaces</button>
-        <button type="button" class="btn btn-secondary">Residential</button>
-    </div> -->
+    <div class="d-flex flex-row map-controls">
+        <div class="p-2">Show Statistic: </div>
+        <div class="p-2">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="statDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Workplace
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <button class="dropdown-item field-opt" type="button">Retail & Recreation</button>
+                    <button class="dropdown-item field-opt" type="button">Grocery & Pharmacy</button>
+                    <button class="dropdown-item field-opt" type="button">Parks</button>
+                    <button class="dropdown-item field-opt" type="button">Transit Station</button>
+                    <button class="dropdown-item field-opt" type="button">Workplace</button>
+                    <button class="dropdown-item field-opt" type="button">Residential</button>
+                </div>
+            </div>
+        </div>
+        <div class="p-2">Region:</div>
+        <div class="p-2">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="regionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                United States
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <button class="dropdown-item map-toggle" type="button">United States</button>
+                    <button class="dropdown-item map-toggle" type="button">World</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div class="row">
         <div id="map" class="col-lg-6"></div>
     </div>
@@ -40,6 +65,6 @@
             <input type="range" class="full-width-slider" min="0" max="5" step="1" id="mapDate" value="0">
         </div>
     </div>
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

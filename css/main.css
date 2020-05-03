@@ -18,6 +18,12 @@ path:hover {
     stroke-width: 1px;
   }
 
+.map-controls{
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 1.5em;
+}
+
 /* map tooltip formatting */
 div.tooltip { 
     position: absolute;     
